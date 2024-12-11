@@ -208,4 +208,4 @@ Commandes utiles :
 
 ## 👨‍💻 Deuxième TP Pratique 
 
-* ➡️ [Symfony Recipes Part 2]() ITS COMING SOON
+* ➡️ [Symfony Recipes Part 2](https://github.com/code-gt/GT4D-Recipes-Symfony-Part-2)
