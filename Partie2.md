@@ -66,20 +66,41 @@ Les formulaires dans Symfony sont **puissants** et simplifient la **création**,
 2.  **Afficher un formulaire dans un contrôleur :**
 
     ```php
-    use App\Form\TaskType;
+    use App\Entity\Product;
+    use App\Form\ProductType;
+    use App\Repository\ProductRepository;
+    use Doctrine\ORM\EntityManagerInterface;
+    use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
     use Symfony\Component\HttpFoundation\Request;
+    use Symfony\Component\HttpFoundation\Response;
+    use Symfony\Component\Routing\Attribute\Route;
 
-    public function new(Request $request): Response
+    #[Route('/product/add', name: 'app_product_add')]
+    public function add(Request $request, EntityManagerInterface $entityManager): Response
     {
-        $form = $this->createForm(TaskType::class);
-        $form->handleRequest($request);
+        $product = new Product();
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            // Traitez les données ici
+        $formProduct = $this->createForm(ProductType::class, $product);
+
+        $formProduct->handleRequest($request);
+
+        if($formProduct->isSubmitted() && $formProduct->isValid()){
+            // Quand le formulaire est envoyé et est valide
+
+            $entityManager->persist($product);
+
+            $entityManager->flush();
+
+            return $this->redirectToRoute('app_product');
+            
         }
 
-        return $this->render('task/new.html.twig', [
-            'form' => $form->createView(),
+
+
+
+        return $this->render('product/add.html.twig', [
+            'controller_name' => 'ProductController',
+            'formProduct' => $formProduct
         ]);
     }
     ```
