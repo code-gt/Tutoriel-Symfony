@@ -98,7 +98,8 @@ Voici un récapitulatif des commandes Symfony les plus pratiques pour vous aider
 
   ```bash
   symfony console make:user
-  symfony console make:auth
+  symfony console make:security:form-login
+  symfony console make:registration-form
   ```
 
 ## ⚙️ Utilisation des bundles
