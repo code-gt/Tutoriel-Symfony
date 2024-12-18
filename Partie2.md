@@ -150,7 +150,7 @@ Protégez vos applications en configurant facilement un système d'authentificat
 2. **Configurer l’authentification :**
 
     ```bash
-    symfony console make:auth
+    symfony console make:security:form-login
     ```
 
     Vous pouvez choisir entre :
@@ -172,6 +172,14 @@ Protégez vos applications en configurant facilement un système d'authentificat
 4. **Tester la connexion :**
 
     Accédez à `/login` pour essayer votre système de connexion.
+
+5. **Inscription**
+
+    Suivre la même démarche pour créer une inscription, mais avec la commande :
+   
+    ```bash
+    symfony console make:registration-form
+    ```
 
 ## ⚙️ EasyAdmin : Une interface d'administration rapide
 
