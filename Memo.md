@@ -12,6 +12,8 @@ Voici un récapitulatif des commandes Symfony les plus pratiques pour vous aider
 
 - **Créer un nouveau projet Symfony :**
 
+  Privilégier l'utilisation de la commande indiqué sur la documentation officielle de Symfony, en webapp : [https://symfony.com/doc/current/setup.html](https://symfony.com/doc/current/setup.html)
+
   ```bash
   symfony new my_project_directory --version="7.1.*" --webapp
   ```
