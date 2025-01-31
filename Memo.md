@@ -15,7 +15,7 @@ Voici un récapitulatif des commandes Symfony les plus pratiques pour vous aider
   Privilégier l'utilisation de la commande indiqué sur la documentation officielle de Symfony, en webapp : [https://symfony.com/doc/current/setup.html](https://symfony.com/doc/current/setup.html)
 
   ```bash
-  symfony new my_project_directory --version="7.1.*" --webapp
+  symfony new my_project_directory --version="7.2.*" --webapp
   ```
 
 - **Lancer le serveur de développement :**
@@ -79,6 +79,14 @@ Voici un récapitulatif des commandes Symfony les plus pratiques pour vous aider
   ```bash
   symfony console doctrine:query:sql "SELECT * FROM table_name"
   ```
+
+## CRUD
+
+**Prérequis** : pour utiliser cette commande il faut avoir créer une Entity et ne pas avoir **commencé** à faire le Controller associé
+
+```bash
+symfony console make:crud
+```
 
 ## 🛠️ Débogage et outils pratiques
 
