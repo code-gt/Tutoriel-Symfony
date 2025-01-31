@@ -62,13 +62,24 @@ Voici un récapitulatif des commandes Symfony les plus pratiques pour vous aider
 
 - **Mettre à jour la base de données après modifications :**
 
-  1. Créer le fichier de migration :
+  1. Créer la base de donnée
+ 
+    ```bash
+    symfony console doctrine:database:create
+
+    ou
+
+    symfony console d:d:c
+    ```
+
+
+  2. Créer le fichier de migration :
 
      ```bash
      symfony console make:migration
      ```
 
-  2. Executer le fichier de migration :
+  3. Executer le fichier de migration :
 
      ```bash
      symfony console doctrine:migrations:migrate
